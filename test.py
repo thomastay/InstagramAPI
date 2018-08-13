@@ -5,10 +5,10 @@
 
 from InstagramAPI import InstagramAPI
 
-api = InstagramAPI("login", "password")
+api = InstagramAPI("sonderouslife", "gp99uLm2KHrhBESjok9D")
 if (api.login()):
     api.getSelfUserFeed()  # get self user feed
     print(api.LastJson)  # print last response JSON
-    print("Login succes!")
+    print("Login success!")
 else:
     print("Can't login!")

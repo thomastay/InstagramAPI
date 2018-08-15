@@ -7,23 +7,25 @@
 # this example for how to delete self media feed
 # have 2 parameter on method deleteMedia( MediaID, MediaType)
 
-from InstagramAPI import InstagramAPI 
+from .InstagramAPI import InstagramAPI
 
-# change this username & password
-username = 'your_username_here'
-password = 'your_password_here'
+config = configparser.ConfigParser()
+config.read("../login.ini")
+username = config["LOGIN"]["username"]
+passwd = config["LOGIN"]["password"]
+InstagramAPI = InstagramAPI(username, passwd)
 
-ig = InstagramAPI(username, password) 
+ig = InstagramAPI(username, password)
 
 # login 
-ig.login() 
+ig.login()
 
 # get Self user feed 
 ig.getSelfUserFeed()
 
 # get response json and assignment value to MediaList Variable
 # dict type data 
-MediaList = ig.LastJson 
+MediaList = ig.LastJson
 
 # get first media for example delete media
 Media = MediaList['items'][0]

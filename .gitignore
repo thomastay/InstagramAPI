@@ -3,3 +3,5 @@ InstagramApi.egg-info/
 dist/
 venv/
 *.swp
+*.ini
+tags
